@@ -1,4 +1,5 @@
 1 - php artisan auth
+<br>
 2 - php artisan make:migartion create_admins_table ... create_advisors_table ... 
 3 - Duplicate models
 4 - config -> auth -> add..
