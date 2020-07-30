@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class StudentLoginController extends Controller
 {
@@ -42,5 +43,20 @@ class StudentLoginController extends Controller
     public function logout(){
         Auth::guard('student')->logout();
         return redirect()->route('student.login');
+    }
+
+    public function showStudentResetPassword(){
+        return view('auth.student-reset-password');
+    }
+
+    public function studentReplaceNewPassword(Request $request){
+        $user = Auth::guard('student')->user();
+        $this->validate($request,[
+            'password' => 'required|min:6'
+        ]);
+        $user->password = Hash::make($request['password']);
+        $user->must_set_password = 0;
+        $user->save();
+        return redirect()->route('student.dashboard');
     }
 }

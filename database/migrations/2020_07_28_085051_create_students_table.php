@@ -18,6 +18,7 @@ class CreateStudentsTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->integer('student_code');
+            $table->boolean('must_set_password')->default(1);
             $table->string('email')->unique();
             $table->integer('entry_year');
             $table->timestamp('email_verified_at')->nullable();

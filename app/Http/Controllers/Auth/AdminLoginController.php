@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminLoginController extends Controller
 {
@@ -36,12 +37,27 @@ class AdminLoginController extends Controller
 
 
         // on false redirect to login form with data
-        return redirect()->back()->withInput($request->only('email' , 'remember'));
+        return redirect()->back()->withInput($request->only('email' , 'remember'))->with('error', 'Thanks for contacting us!');
     }
 
 
     public function logout(){
         Auth::guard('admin')->logout();
         return redirect()->route('admin.login');
+    }
+
+    public function showAdminResetPassword(){
+        return view('auth.admin-reset-password');
+    }
+
+    public function adminReplaceNewPassword(Request $request){
+        $user = Auth::guard('admin')->user();
+        $this->validate($request,[
+            'password' => 'required|min:6'
+        ]);
+        $user->password = Hash::make($request['password']);
+        $user->must_set_password = 0;
+        $user->save();
+        return redirect()->route('admin.dashboard');
     }
 }

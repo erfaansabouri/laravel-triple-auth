@@ -54,6 +54,7 @@
                                     {{ Auth::user()->fname }} <span class="caret"></span>
                                 </a>
 
+                                @auth('admin')
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('admin.logout') }}"
                                        onclick="event.preventDefault();
@@ -65,6 +66,33 @@
                                         @csrf
                                     </form>
                                 </div>
+                                @endauth
+                                @auth('advisor')
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('advisor.logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout as Admin
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('advisor.logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                @endauth
+                                @auth('student')
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('student.logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout as Admin
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('student.logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                @endauth
                             </li>
                         @endguest
                     </ul>

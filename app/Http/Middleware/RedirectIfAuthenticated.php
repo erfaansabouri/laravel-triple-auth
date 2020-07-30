@@ -18,14 +18,14 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
 
-        if ($guard == "admin" && Auth::guard($guard)->check()) {
-            return redirect(route('admin'));
+        if ($guard == "admin" && Auth::guard($guard)->check() && Auth::guard($guard)->user()->must_set_password == 0) {
+            return redirect(route('admin.dashboard'));
         }
-        if ($guard == "advisor" && Auth::guard($guard)->check()) {
-            return redirect(route('advisor'));
+        elseif ($guard == "advisor" && Auth::guard($guard)->check() && Auth::guard($guard)->user()->must_set_password == 0) {
+            return redirect(route('advisor.dashboard'));
         }
-        if ($guard == "student" && Auth::guard($guard)->check()) {
-            return redirect(route('student'));
+        elseif ($guard == "student" && Auth::guard($guard)->check() && Auth::guard($guard)->user()->must_set_password == 0) {
+            return redirect(route('student.dashboard'));
         }
         return $next($request);
     }

@@ -136,12 +136,12 @@ return [
         'advisors' => [
             'provider' => 'advisors',
             'table' => 'password_resets',
-            'expire' => 60,
+            'expire' => 15,
         ],
         'students' => [
             'provider' => 'students',
             'table' => 'password_resets',
-            'expire' => 60,
+            'expire' => 15,
         ],
     ],
 

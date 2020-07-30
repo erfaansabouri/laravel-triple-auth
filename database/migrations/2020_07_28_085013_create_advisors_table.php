@@ -18,6 +18,7 @@ class CreateAdvisorsTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('email')->unique();
+            $table->boolean('must_set_password')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
