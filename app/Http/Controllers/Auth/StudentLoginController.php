@@ -17,19 +17,19 @@ class StudentLoginController extends Controller
     }
 
     public function showLoginForm(){
-        return view('auth.student-login');
+        return view('student.login');
     }
 
     public function login(Request $request){
         //validate the form data
 
         $this->validate($request,[
-            'email' => 'required|email',
+            'student_code' => 'required',
             'password' => 'required|min:6'
         ]);
 
         // attempt to log the user in
-        if(Auth::guard('student')->attempt(['email' => $request->email , 'password' => $request->password],$request->remember)){
+        if(Auth::guard('student')->attempt(['student_code' => $request->student_code , 'password' => $request->password],$request->remember)){
             // on success redirect to indetended location
 
             return redirect()->intended(route('student.dashboard'));
@@ -37,7 +37,7 @@ class StudentLoginController extends Controller
 
 
         // on false redirect to login form with data
-        return redirect()->back()->withInput($request->only('email' , 'remember'));
+        return redirect()->back()->withInput($request->only('student_code' , 'remember'))->with('error', 'نام کاربری یا رمز عبور اشتباه است.');
     }
 
     public function logout(){
@@ -46,7 +46,7 @@ class StudentLoginController extends Controller
     }
 
     public function showStudentResetPassword(){
-        return view('auth.student-reset-password');
+        return view('student.reset-password');
     }
 
     public function studentReplaceNewPassword(Request $request){

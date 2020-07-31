@@ -17,7 +17,7 @@ class AdminLoginController extends Controller
     }
 
     public function showLoginForm(){
-        return view('auth.admin-login');
+        return view('admin.login');
     }
 
     public function login(Request $request){
@@ -37,7 +37,7 @@ class AdminLoginController extends Controller
 
 
         // on false redirect to login form with data
-        return redirect()->back()->withInput($request->only('email' , 'remember'))->with('error', 'Thanks for contacting us!');
+        return redirect()->back()->withInput($request->only('email' , 'remember'))->with('error', 'نام کاربری یا رمز عبور اشتباه است.');
     }
 
 
@@ -47,7 +47,7 @@ class AdminLoginController extends Controller
     }
 
     public function showAdminResetPassword(){
-        return view('auth.admin-reset-password');
+        return view('admin.reset-password');
     }
 
     public function adminReplaceNewPassword(Request $request){

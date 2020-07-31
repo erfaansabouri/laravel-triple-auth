@@ -17,7 +17,7 @@ class AdvisorLoginController extends Controller
     }
 
     public function showLoginForm(){
-        return view('auth.advisor-login');
+        return view('advisor.login');
     }
 
     public function login(Request $request){
@@ -37,7 +37,7 @@ class AdvisorLoginController extends Controller
 
 
         // on false redirect to login form with data
-        return redirect()->back()->withInput($request->only('email' , 'remember'));
+        return redirect()->back()->withInput($request->only('email' , 'remember'))->with('error', 'نام کاربری یا رمز عبور اشتباه است.');
     }
 
     public function logout(){
@@ -46,7 +46,7 @@ class AdvisorLoginController extends Controller
     }
 
     public function showAdvisorResetPassword(){
-        return view('auth.advisor-reset-password');
+        return view('advisor.reset-password');
     }
 
     public function advisorReplaceNewPassword(Request $request){

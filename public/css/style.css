@@ -1,0 +1,26 @@
+@font-face {
+    font-family: IranSans;
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Medium.eot');
+    src: url('../fonts/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/woff2/IRANSansWeb(FaNum)_Medium.woff2') format('woff2'),
+    url('../fonts/woff/IRANSansWeb(FaNum)_Medium.woff') format('woff'),
+    url('../fonts/ttf/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
+    font-weight: normal;
+}
+
+html{
+    direction: rtl;
+}
+
+body{
+    background-color: #ededed;
+    font-family: IranSans;
+}
+
+.chartasan-text-white{
+    color: white;
+}
+
+.chartasan-bg-dark{
+    background-color: #2e2e2e;
+}

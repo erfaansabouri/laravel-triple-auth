@@ -23,6 +23,6 @@ class AdvisorController extends Controller
      */
     public function index()
     {
-        return view('advisor');
+        return view('advisor.dashboard');
     }
 }

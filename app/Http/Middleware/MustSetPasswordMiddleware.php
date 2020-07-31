@@ -16,23 +16,19 @@ class MustSetPasswordMiddleware
      */
     public function handle($request, Closure $next , $guard)
     {
-        if($guard == 'admin'){
-            if(Auth::guard('admin')->user()->must_set_password == 1){
-                return redirect(route('admin.reset.password'));
-            }
+
+        if($guard == 'admin' && Auth::guard('admin')->user()->must_set_password == 1){
+            return redirect(route('admin.reset.password'));
         }
 
-        if($guard == 'student'){
-            if(Auth::guard('student')->user()->must_set_password == 1){
-                return redirect(route('student.reset.password'));
-            }
+        if($guard == 'advisor' && Auth::guard('advisor')->user()->must_set_password == 1){
+            return redirect(route('advisor.reset.password'));
         }
 
-        if($guard == 'advisor'){
-            if(Auth::guard('advisor')->user()->must_set_password == 1){
-                return redirect(route('advisor.reset.password'));
-            }
+        if($guard == 'student' && Auth::guard('student')->user()->must_set_password == 1){
+            return redirect(route('student.reset.password'));
         }
+
 
 
         return $next($request);
