@@ -4,13 +4,10 @@
     @include('partials.head')
 </head>
 <body>
-<div class="uk-container">
-    @include('partials.navbar')
-    @yield('content')
-    @include('partials.footer')
-
-</div>
-
+@include('partials.navbar')
+<div class="uk-container"></div>
+@yield('content')
+@include('partials.footer')
 
 </body>
 

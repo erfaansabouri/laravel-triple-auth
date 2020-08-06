@@ -20,6 +20,9 @@ class CreateAdvisorsTable extends Migration
             $table->string('email')->unique();
             $table->boolean('must_set_password')->default(1);
             $table->timestamp('email_verified_at')->nullable();
+            $table->unsignedBigInteger('branch_id');
+            $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade');
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

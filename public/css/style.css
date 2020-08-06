@@ -24,3 +24,194 @@ body{
 .chartasan-bg-dark{
     background-color: #2e2e2e;
 }
+
+
+.chartasan-bg-semi-dark{
+    background-color: #44638e;
+}
+
+.chartasan-bg-light-red{
+    background-color: #ff6f6b;
+}
+
+.chartasan-bg-light-yellow{
+    background-color: #47b467;
+}
+
+.chartasan-bg-purple{
+    background-color: #a541b4;
+}
+
+.chartasan-admin-dashboard-card:hover{
+    background-color: #68f9ad;
+
+}
+
+.chartasan-admin-dashboard-card:hover > p{
+    color: black;
+}
+
+.chartasan-admin-dashboard-card:hover > h3{
+
+    color: black;
+}
+
+.chartasan-admin-text-black{
+    color: #000;
+}
+
+.chartasan-admin-table-font-size-small{
+    font-size: 14px;
+}
+
+.chartasan-shadow-left-right{
+    box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+}
+
+
+
+.chartasan-greeen-button {
+    font-family: IranSans;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    background-color: #16a085;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 280px;
+    text-align: center;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.chartasan-greeen-button:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #1abc9c;
+    color: #000;
+}
+
+.chartasan-greeen-button:after {
+    content: "";
+    background: #1abc9c;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.chartasan-greeen-button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.chartasan-greeen-button:focus { outline:0; }
+
+
+
+/*red btn*/
+.chartasan-red-button {
+    font-family: IranSans;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    background-color: #e20300;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.chartasan-red-button:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #e20300;
+    color: #000;
+}
+
+.chartasan-red-button:after {
+    content: "";
+    background: #bc2320;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.chartasan-red-button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.chartasan-red-button:focus { outline:0; }
+
+
+
+
+/* black btn*/
+.chartasan-black-button {
+    font-family: IranSans;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    background-color: #676767;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.chartasan-black-button:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #676767;
+    color: #000;
+}
+
+.chartasan-black-button:after {
+    content: "";
+    background: #676767;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.chartasan-black-button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.chartasan-black-button:focus { outline:0; }
+
+.uk-input{
+    color: #fff;
+}

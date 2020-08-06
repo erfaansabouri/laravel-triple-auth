@@ -14,7 +14,16 @@
                     <li><a href="{{ route('advisor.login') }}">اساتید مشاور</a></li>
                 </ul>
             </div>
+            <div class="uk-navbar-center-right">
+                <div>
+                    <ul class="uk-navbar-nav">
+                        <li><a href="{{ route('admin.login') }}">مدیریت</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+
+
 
     </div>
 </nav>

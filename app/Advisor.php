@@ -39,4 +39,12 @@ class Advisor extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
+
+    public function branch(){
+        return $this->belongsTo(Branch::class);
+    }
 }

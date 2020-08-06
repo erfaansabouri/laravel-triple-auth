@@ -23,6 +23,12 @@ class CreateStudentsTable extends Migration
             $table->integer('entry_year');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedBigInteger('advisor_id');
+            $table->foreign('advisor_id')->references('id')->on('advisors')->onDelete('cascade');
+            $table->bigInteger('branch_id')->unsigned();
+            $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade');
+
+
             $table->rememberToken();
             $table->timestamps();
         });
